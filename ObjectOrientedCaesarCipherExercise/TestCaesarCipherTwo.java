@@ -12,7 +12,7 @@ import java.io.*;
 
 public class TestCaesarCipherTwo {
     
-    public int[] countLetters(String s)
+    private int[] countLetters(String s)
     {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int[] alphabetCount = new int[26];
@@ -31,7 +31,7 @@ public class TestCaesarCipherTwo {
         return alphabetCount;
     }
     
-    public int maxIndex(int[] alphabetCount)
+    private int maxIndex(int[] alphabetCount)
     {
         int max = -1;
         int index = -1;
@@ -48,7 +48,7 @@ public class TestCaesarCipherTwo {
         return index;
     }
     
-    public int getKey(String s)
+    private int getKey(String s)
     {
         int[] alphabetCount = countLetters(s);
         int index = maxIndex(alphabetCount);
@@ -62,7 +62,7 @@ public class TestCaesarCipherTwo {
         return key;
     }
     
-    public String halfOfString(String message, int start)
+    private String halfOfString(String message, int start)
     {
         String half = "";
         
@@ -74,7 +74,7 @@ public class TestCaesarCipherTwo {
         return half;
     }
     
-    public String breakCaesarCipher(String encrypted)
+    private String breakCaesarCipher(String encrypted)
     {
         String encrypted1 = halfOfString(encrypted, 0);
         String encrypted2 = halfOfString(encrypted, 1);
