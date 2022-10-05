@@ -81,6 +81,8 @@ public class TestCaesarCipherTwo {
         int key1 = getKey(encrypted1);
         int key2 = getKey(encrypted2);
         
+        System.out.println("Key1: " + key1 + ", Key2: " + key2);
+        
         CaesarCipherTwo cct = new CaesarCipherTwo(key1, key2);
         
         String decrypted = cct.decrypt(encrypted);
@@ -93,12 +95,12 @@ public class TestCaesarCipherTwo {
     public void simpleTests() {
         FileResource fr = new FileResource();
         String message = fr.asString();
-        int key1 = 17;
-        int key2 = 3;
-        CaesarCipherTwo cct = new CaesarCipherTwo(key1, key2);
-        String encrypted = cct.encrypt(message);
-        System.out.println(encrypted);
+        int key1 = 14;
+        int key2 = 24;
+        //CaesarCipherTwo cct = new CaesarCipherTwo(key1, key2);
+        //String encrypted = cct.encrypt(message);
+        //System.out.println(encrypted);
         
-        System.out.println(breakCaesarCipher(encrypted));
+        System.out.println(breakCaesarCipher(message));
     }
 }

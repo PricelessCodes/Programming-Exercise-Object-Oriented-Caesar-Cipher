@@ -56,7 +56,7 @@ public class TestCaesarCipher {
         int key = index - 4;
         if (index < 4)
         {
-            key = 4 - index;
+            key = 26 - (4 - index);
         }
         
         return key;
@@ -65,7 +65,7 @@ public class TestCaesarCipher {
     public void simpleTests() {
         FileResource fr = new FileResource();
         String message = fr.asString();
-        int key = 2;
+        int key = 15;
         CaesarCipher cc = new CaesarCipher(key);
         String encrypted = cc.encrypt(message);
         System.out.println(encrypted);
